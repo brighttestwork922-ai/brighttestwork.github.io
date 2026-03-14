@@ -8,8 +8,13 @@
 
 <style>
 
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
 height:100vh;
 display:flex;
 justify-content:center;
@@ -19,7 +24,7 @@ font-family:Segoe UI,Arial;
 color:white;
 overflow:hidden;
 
-background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c92d2);
+background:linear-gradient(-45deg,#141e30,#243b55,#0f2027,#2c5364);
 background-size:400% 400%;
 animation:bgmove 12s ease infinite;
 }
@@ -31,31 +36,35 @@ animation:bgmove 12s ease infinite;
 }
 
 h1{
-font-size:40px;
-letter-spacing:1px;
+font-size:42px;
 margin-bottom:50px;
-animation:fadein 1.5s ease;
+letter-spacing:1px;
+animation:fade 1.5s ease;
 }
 
-@keyframes fadein{
-0%{opacity:0; transform:translateY(-30px);}
-100%{opacity:1; transform:translateY(0);}
+@keyframes fade{
+0%{opacity:0;transform:translateY(-30px);}
+100%{opacity:1;}
 }
+
+/* loader ring */
 
 .loader{
-width:100px;
-height:100px;
+width:110px;
+height:110px;
 border-radius:50%;
-border:6px solid rgba(255,255,255,0.15);
-border-top:6px solid #00ffe7;
+border:6px solid rgba(255,255,255,0.1);
+border-top:6px solid #00ffd5;
 animation:spin 1s linear infinite;
-box-shadow:0 0 35px rgba(0,255,231,0.8);
+box-shadow:0 0 40px rgba(0,255,213,0.9);
 }
 
 @keyframes spin{
 0%{transform:rotate(0deg);}
 100%{transform:rotate(360deg);}
 }
+
+/* text */
 
 .text{
 margin-top:30px;
@@ -70,16 +79,16 @@ animation:pulse 1.5s infinite;
 100%{opacity:0.3;}
 }
 
-/* floating particles */
+/* particles */
 
 .particle{
 position:absolute;
-width:4px;
-height:4px;
+width:3px;
+height:3px;
 background:white;
 border-radius:50%;
 opacity:0.7;
-animation:float 10s linear infinite;
+animation:float linear infinite;
 }
 
 @keyframes float{
@@ -87,7 +96,7 @@ animation:float 10s linear infinite;
 transform:translateY(0);
 opacity:0;
 }
-50%{
+20%{
 opacity:1;
 }
 100%{
@@ -107,16 +116,25 @@ opacity:0;
 
 <div class="text">กำลังเข้าสู่ระบบ...</div>
 
-<!-- particles -->
-<div class="particle" style="left:10%;animation-delay:0s"></div>
-<div class="particle" style="left:20%;animation-delay:2s"></div>
-<div class="particle" style="left:30%;animation-delay:4s"></div>
-<div class="particle" style="left:40%;animation-delay:1s"></div>
-<div class="particle" style="left:50%;animation-delay:3s"></div>
-<div class="particle" style="left:60%;animation-delay:5s"></div>
-<div class="particle" style="left:70%;animation-delay:2s"></div>
-<div class="particle" style="left:80%;animation-delay:4s"></div>
-<div class="particle" style="left:90%;animation-delay:1s"></div>
+<script>
+
+/* create particles */
+
+for(let i=0;i<80;i++){
+
+let p=document.createElement("div")
+p.className="particle"
+
+p.style.left=Math.random()*100+"%"
+p.style.top=Math.random()*100+"%"
+p.style.animationDuration=(5+Math.random()*10)+"s"
+p.style.opacity=Math.random()
+
+document.body.appendChild(p)
+
+}
+
+</script>
 
 </body>
 </html>
