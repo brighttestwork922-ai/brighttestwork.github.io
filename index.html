@@ -1,75 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="th">
 <head>
 <meta charset="UTF-8">
 <title>Office Equipment System</title>
 
-<script>
-setTimeout(function(){
-window.location.href="https://www.appsheet.com/start/1291b8a6-f089-4a71-8da2-de0eaaf1b51b";
-},3000);
-</script>
+<meta http-equiv="refresh" content="3;url=https://www.appsheet.com/start/1291b8a6-f089-4a71-8da2-de0eaaf1b51b">
 
 <style>
 
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
 body{
-font-family:Segoe UI,Arial;
+margin:0;
 height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:linear-gradient(135deg,#1b5e20,#4caf50,#81c784);
-background-size:400% 400%;
-animation:bgMove 10s infinite alternate;
+flex-direction:column;
+font-family:Segoe UI, Arial;
 color:white;
+background:linear-gradient(-45deg,#1e3c72,#2a5298,#0f2027,#203a43);
+background-size:400% 400%;
+animation:bgmove 10s ease infinite;
 }
 
-@keyframes bgMove{
-0%{background-position:left;}
-100%{background-position:right;}
+@keyframes bgmove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-.container{
-text-align:center;
-}
-
-.logo{
-font-size:60px;
-animation:float 2s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0px);}
-}
-
-.title{
-font-size:28px;
-margin-top:15px;
-font-weight:600;
+h1{
+font-size:38px;
 letter-spacing:1px;
+margin-bottom:50px;
+animation:fadein 1.5s ease;
 }
 
-.subtitle{
-margin-top:5px;
-opacity:0.8;
+@keyframes fadein{
+0%{opacity:0; transform:translateY(-20px);}
+100%{opacity:1; transform:translateY(0);}
 }
 
 .loader{
-margin:35px auto;
-border:6px solid rgba(255,255,255,0.3);
-border-top:6px solid white;
+width:90px;
+height:90px;
 border-radius:50%;
-width:60px;
-height:60px;
+border:6px solid rgba(255,255,255,0.2);
+border-top:6px solid #00ffcc;
 animation:spin 1s linear infinite;
+box-shadow:0 0 25px rgba(0,255,200,0.6);
 }
 
 @keyframes spin{
@@ -77,31 +55,17 @@ animation:spin 1s linear infinite;
 100%{transform:rotate(360deg);}
 }
 
-.progress{
-width:260px;
-height:8px;
-background:rgba(255,255,255,0.2);
-border-radius:20px;
-overflow:hidden;
-margin:auto;
-}
-
-.progress-bar{
-height:100%;
-width:0%;
-background:white;
-animation:loading 3s linear forwards;
-}
-
-@keyframes loading{
-0%{width:0%;}
-100%{width:100%;}
-}
-
-.footer{
+.text{
 margin-top:25px;
-font-size:13px;
-opacity:0.7;
+font-size:18px;
+opacity:0.9;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{opacity:0.3;}
+50%{opacity:1;}
+100%{opacity:0.3;}
 }
 
 </style>
@@ -109,24 +73,11 @@ opacity:0.7;
 
 <body>
 
-<div class="container">
-
-<div class="logo">📦</div>
-
-<div class="title">Office Equipment System</div>
-<div class="subtitle">กำลังโหลดระบบ...</div>
+<h1>Office Equipment System</h1>
 
 <div class="loader"></div>
 
-<div class="progress">
-<div class="progress-bar"></div>
-</div>
-
-<div class="footer">
-Loading application...
-</div>
-
-</div>
+<div class="text">กำลังเข้าสู่ระบบ...</div>
 
 </body>
 </html>
