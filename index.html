@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Office Equipment System</title>
 
-<meta http-equiv="refresh" content="3;url=https://www.appsheet.com/start/1291b8a6-f089-4a71-8da2-de0eaaf1b51b">
+<meta http-equiv="refresh" content="4;url=https://www.appsheet.com/start/1291b8a6-f089-4a71-8da2-de0eaaf1b51b">
 
 <style>
 
@@ -15,11 +15,13 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-font-family:Segoe UI, Arial;
+font-family:Segoe UI,Arial;
 color:white;
-background:linear-gradient(-45deg,#1e3c72,#2a5298,#0f2027,#203a43);
+overflow:hidden;
+
+background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c92d2);
 background-size:400% 400%;
-animation:bgmove 10s ease infinite;
+animation:bgmove 12s ease infinite;
 }
 
 @keyframes bgmove{
@@ -29,25 +31,25 @@ animation:bgmove 10s ease infinite;
 }
 
 h1{
-font-size:38px;
+font-size:40px;
 letter-spacing:1px;
 margin-bottom:50px;
 animation:fadein 1.5s ease;
 }
 
 @keyframes fadein{
-0%{opacity:0; transform:translateY(-20px);}
+0%{opacity:0; transform:translateY(-30px);}
 100%{opacity:1; transform:translateY(0);}
 }
 
 .loader{
-width:90px;
-height:90px;
+width:100px;
+height:100px;
 border-radius:50%;
-border:6px solid rgba(255,255,255,0.2);
-border-top:6px solid #00ffcc;
+border:6px solid rgba(255,255,255,0.15);
+border-top:6px solid #00ffe7;
 animation:spin 1s linear infinite;
-box-shadow:0 0 25px rgba(0,255,200,0.6);
+box-shadow:0 0 35px rgba(0,255,231,0.8);
 }
 
 @keyframes spin{
@@ -56,9 +58,9 @@ box-shadow:0 0 25px rgba(0,255,200,0.6);
 }
 
 .text{
-margin-top:25px;
+margin-top:30px;
 font-size:18px;
-opacity:0.9;
+letter-spacing:1px;
 animation:pulse 1.5s infinite;
 }
 
@@ -66,6 +68,32 @@ animation:pulse 1.5s infinite;
 0%{opacity:0.3;}
 50%{opacity:1;}
 100%{opacity:0.3;}
+}
+
+/* floating particles */
+
+.particle{
+position:absolute;
+width:4px;
+height:4px;
+background:white;
+border-radius:50%;
+opacity:0.7;
+animation:float 10s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-1000px);
+opacity:0;
+}
 }
 
 </style>
@@ -78,6 +106,17 @@ animation:pulse 1.5s infinite;
 <div class="loader"></div>
 
 <div class="text">กำลังเข้าสู่ระบบ...</div>
+
+<!-- particles -->
+<div class="particle" style="left:10%;animation-delay:0s"></div>
+<div class="particle" style="left:20%;animation-delay:2s"></div>
+<div class="particle" style="left:30%;animation-delay:4s"></div>
+<div class="particle" style="left:40%;animation-delay:1s"></div>
+<div class="particle" style="left:50%;animation-delay:3s"></div>
+<div class="particle" style="left:60%;animation-delay:5s"></div>
+<div class="particle" style="left:70%;animation-delay:2s"></div>
+<div class="particle" style="left:80%;animation-delay:4s"></div>
+<div class="particle" style="left:90%;animation-delay:1s"></div>
 
 </body>
 </html>
